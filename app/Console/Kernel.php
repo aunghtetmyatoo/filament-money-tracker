@@ -15,6 +15,8 @@ class Kernel extends ConsoleKernel
         if (config('app.demo')) {
             $schedule->command('migrate:fresh --seed')->everyFifteenMinutes();
         }
+
+        $schedule->command('currency:fetch')->dailyAt('09:30');
     }
 
     /**
