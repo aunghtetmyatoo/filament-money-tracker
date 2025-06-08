@@ -19,6 +19,11 @@ class AccountSeeder extends Seeder
         Account::insert([
             [
                 'id' => Ulid::generate(),
+                'name' => 'AHMO/ACKL',
+                'owner_id' => $user->id,
+            ],
+            [
+                'id' => Ulid::generate(),
                 'name' => 'Personal',
                 'owner_id' => $user->id,
             ],
