@@ -1,12 +1,10 @@
 <p align="center">
-	<a href="#"  target="_blank" title="Dinero">
-		<img src="/public/brands/dinero-logo.png" alt="Dinero" width="340px">
+	<a href="#"  target="_blank" title="logo">
+		<img src="/public/brands/logo.png" alt="logo" width="340px">
 	</a>
 </p>
 
 <br>
-
-<p align="center">:rocket: Multi Account Money Tracker :sparkles: <a href="https://github.com/Shipu/dinero">Dinero</a></p>
 
 <p align="center">
 	<img src="https://img.shields.io/badge/version project-1.0-brightgreen" alt="version project">
@@ -19,60 +17,63 @@
 	</a>
 </p>
 
-## Dinero
-Dinero is a multi account money tracker. It is a simple application that allows you to track your money in multiple accounts and categories. It is written in PHP (Laravel Framework) and  Filament v3.
+## Overview
+
+This is a multi account money tracker. It is a simple application that allows you to track your money in multiple accounts and categories. It is written in PHP (Laravel Framework) and Filament v3.
 
 ## Features
-- Multi Account (Tenants)
-- Multi Currency
-- Wallets
-- Categories
-- Budgets
-- Goals
-- Debts
-- Transactions
-- Reports
+
+-   Multi Account (Tenants)
+-   Multi Currency
+-   Wallets
+-   Categories
+-   Budgets
+-   Goals
+-   Debts
+-   Transactions
+-   Reports
 
 ## Installation
+
 1. Clone the repository
 
-```ssh 
-git clone https://github.com/Shipu/dinero.git
+```ssh
+git clone https://github.com/aunghtetmyatoo/filament-money-tracker.git
 ```
 
 3. Switch to the repo folder
 
 ```
-cd dinero
+cd filament-money-tracker
 ```
 
 2. Install all the dependencies using composer
 
-```ssh 
+```ssh
 composer install
 ```
 
 3. Copy the example env file and make the required configuration changes in the .env file
 
-```ssh 
+```ssh
 cp .env.example .env
 ```
 
 4. Generate a new application key
 
-```ssh 
+```ssh
 php artisan key:generate
 ```
 
 5. Run the database migrations with seeder (Set the database connection in .env before migrating)
 
-```ssh 
+```ssh
 php artisan migrate --seed
 ```
 
 6. Run the application
 
-```ssh 
+```ssh
 php artisan serve
 ```
 
@@ -80,48 +81,7 @@ php artisan serve
 
 > Url: [http://localhost:8000/](http://localhost:8000/)
 
-![img.png](img.png)
-
 8. Login with the following credentials:
-- Email: `demo@dinero.app`
-- Password: `12345678`
 
-## NativePHP
-for the NativePHP version, please check the [nativephp branch](https://github.com/shipu/dinero/tree/native-php)
-```ssh
-git checkout native-php
-```
-
-## Demo
-> Url: [http://dinero.bridgex.live](http://dinero.bridgex.live)
-
-## Screenshots
-![Dashboard](screenshots/dinero-dashboard.png)
-![Wallets](screenshots/dinero-wallets.png)
-![Categories](screenshots/dinero-categories.png)
-![Budgets](screenshots/dinero-budgets.png)
-![Goals](screenshots/dinero-goals.png)
-![Debts](screenshots/dinero-debts.png)
-![Transactions](screenshots/dinero-transactions.png)
-![Accounts](screenshots/dinero-tenants.png)
-![MyProfile](screenshots/dinero-my-profile.png)
-
-### :sparkles: Contributors
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/Shipu">
-        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/4118421?v=4" width="100px;" alt=""/>
-    <br /><sub><b>Shipu Ahamed</b></sub></a></td>    
-    <td align="center"><a href="https://github.com/shojibflamon">
-        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/5617542?v=4" width="100px;" alt=""/>
-    <br /><sub><b>Md. Jahidul Islam</b></sub></a></td>   
-    <td align="center"><a href="https://github.com/devalade">
-        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/74435372?v=4" width="100px;" alt=""/>
-    <br /><sub><b>Alade YESSOUFOU</b></sub></a></td>    
-    <td align="center"><a href="https://github.com/RafaelBlum">
-        <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/41844692?v=4" width="100px;" alt=""/>
-    <br /><sub><b>Rafael Blum</b></sub></a></td> 
-  </tr>
-</table>
-
-> No one is so wise that they don't have something to learn, nor so foolish that they don't have something to teach. `Blaise Pascal`.
+-   Email: `ahmo@money.app`
+-   Password: `12345678`

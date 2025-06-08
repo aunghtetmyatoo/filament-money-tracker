@@ -11,11 +11,10 @@ class Login extends BasePage
         parent::mount();
         if (app()->environment('local')) {
             $this->form->fill([
-                'email' => 'demo@dinero.app',
+                'email' => 'ahmo@money.app',
                 'password' => '12345678',
                 'remember' => true,
             ]);
         }
-        
     }
 }

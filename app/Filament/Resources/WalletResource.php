@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Enums\WalletTypeEnum;
 use App\Filament\Resources\WalletResource\Pages;
 use App\Filament\Resources\WalletResource\RelationManagers;
-use App\Models\Goal;
 use App\Models\Wallet;
 use Filament\Forms;
 use Filament\Forms\Components\ColorPicker;
@@ -55,7 +54,7 @@ class WalletResource extends Resource
                             ->live()
                             ->disabled(fn (string $operation): bool => $operation !== 'create'),
                         TextInput::make('balance')
-                            ->label(fn(string $operation): string => $operation == 'create' ? __('wallets.fields.initial_balance') : __('wallets.fields.balance'))
+                            ->label(fn (string $operation): string => $operation == 'create' ? __('wallets.fields.initial_balance') : __('wallets.fields.balance'))
                             ->required()
                             ->numeric()
                             ->inputMode('decimal')
@@ -78,7 +77,7 @@ class WalletResource extends Resource
                             ->numeric()
                             ->inputMode('decimal')
                             ->default(0)
-                            ->columnSpan(fn(string $operation): int => $operation == 'create' ? 1 : 2)
+                            ->columnSpan(fn (string $operation): int => $operation == 'create' ? 1 : 2)
                             ->visible(fn (Get $get): bool => $get('type') == WalletTypeEnum::CREDIT_CARD->value),
                         TextInput::make('meta.total_due')
                             ->label(__('wallets.fields.total_due'))
@@ -95,7 +94,7 @@ class WalletResource extends Resource
                                 'sm' => 1,
                             ])
                             ->options(country_with_currency_and_symbol())
-                            ->default('BDT'),
+                            ->default('MMK'),
                         ColorPicker::make('color')
                             ->label(__('wallets.fields.color'))
                             ->required()
@@ -128,6 +127,8 @@ class WalletResource extends Resource
                             ->helperText(__('wallets.fields.exclude.help_text'))
                             ->default(false)
                             ->visible(fn (Get $get): bool => $get('type') === WalletTypeEnum::GENERAL->value),
+                        Forms\Components\Hidden::make('decimal_places')
+                            ->default(0),
                     ])->columns(),
             ]);
     }
@@ -195,20 +196,20 @@ class WalletResource extends Resource
                 Tables\Actions\CreateAction::make()->slideOver(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             RelationManagers\TransactionsRelationManager::class,
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ListWallets::route('/'),
-//            'create' => Pages\CreateWallet::route('/create'),
-//            'edit' => Pages\EditWallet::route('/{record}/edit'),
+            //            'create' => Pages\CreateWallet::route('/create'),
+            //            'edit' => Pages\EditWallet::route('/{record}/edit'),
         ];
     }
 }
