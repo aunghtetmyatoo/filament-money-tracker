@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
 class Account extends Model implements HasCurrentTenantLabel
 {
@@ -27,7 +28,7 @@ class Account extends Model implements HasCurrentTenantLabel
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return $this->avatar_url;
+        return Storage::url($this->avatar_url);
     }
 
     public function getCurrentTenantLabel(): string

@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -64,7 +65,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return $this->avatar_url;
+        return Storage::url($this->avatar_url);
     }
 
     public function getTenants(Panel $panel): Collection
