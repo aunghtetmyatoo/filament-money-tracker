@@ -21,7 +21,7 @@ class CreateTransaction extends CreateRecord
      */
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['amount'] *= 100;
+        // $data['amount'] *= 100;
 
         $type = ($data['type'] ?? null);
         if ($type == TransactionTypeEnum::WITHDRAW->value) {

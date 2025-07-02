@@ -19,10 +19,10 @@ class EditTransaction extends EditRecord
         ];
     }
 
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        $data['amount'] *= 100;
+    // protected function mutateFormDataBeforeSave(array $data): array
+    // {
+    //     $data['amount'] *= 100;
 
-        return $data;
-    }
+    //     return $data;
+    // }
 }
